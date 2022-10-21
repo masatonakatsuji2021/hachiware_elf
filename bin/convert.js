@@ -81,7 +81,7 @@ const convert = function(context, option, content){
                 echoStr += "\n\"";
             }
 
-            str += "}catch(error){ ___error = error.toString(); } })();";
+            str += "}catch(error){ ___error = error; } })();";
         }
         else{
             str += "}catch(error){} })();"

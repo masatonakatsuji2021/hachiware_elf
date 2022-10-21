@@ -272,7 +272,7 @@ const sandbox = function(context, __option, str){
 
             resolve({
                 content: __string + errorMsg,
-                error: error.toString(),
+                error: error,
                 onError: true,
                 context: this,
             });
