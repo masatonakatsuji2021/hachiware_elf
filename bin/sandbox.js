@@ -196,6 +196,39 @@ const sandbox = function(context, __option, str){
             return res.content;
         };
 
+        /**
+         * h
+         * @param {*} string 
+         * @returns 
+         */
+        const h = function(string){
+            string = sanitize(string);
+            string = string.split("\n").join("<br>");
+            return string;
+        };
+
+        /**
+         * echoH
+         * @param {*} string 
+         */
+        const echoH = function(string){
+            __string += h(string);
+        };
+
+        /**
+         * 
+         * @param {*} redirectUrl 
+         */
+        const redirect = function(redirectUrl){
+
+            if(!this.res){
+                return;
+            }
+
+            this.res.statusCode = 301;
+            this.res.setHeader("location", redirectUrl);
+        };
+
         var require = undefined;
 
         if(__option.onRequire){
